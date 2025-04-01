@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+- story: fluxo_solucao_automatica
+  steps:
+    - intent: cumprimentar
+    - action: utter_cumprimentar
+    - intent: problema_acesso
+    - action: action_fornecer_suporte
+    - intent: agradecer
+    - action: utter_agradecer
+    - intent: despedir
+    - action: utter_despedir
+
+- story: fluxo_escalonamento
+  steps:
+    - intent: cumprimentar
+    - action: utter_cumprimentar
+    - intent: problema_tecnico
+    - action: action_fornecer_suporte
+    - intent: pedir_ajuda_humana
+    - action: utter_escalonar_humano
+    - intent: despedir
+    - action: utter_despedir
+
+- story: fluxo_mudar_plano
+  steps:
+    - intent: cumprimentar
+    - action: utter_cumprimentar
+    - intent: mudar_plano
+    - action: action_fornecer_suporte
+    - intent: agradecer
+    - action: utter_agradecer
+    - intent: despedir
+    - action: utter_despedir

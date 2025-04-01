@@ -1,0 +1,65 @@
+version: "3.1"
+
+nlu:
+- intent: cumprimentar
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - tudo bem?
+
+- intent: agradecer
+  examples: |
+    - obrigado
+    - valeu
+    - agradeço
+    - muito obrigado
+
+- intent: problema_acesso
+  examples: |
+    - Não consigo acessar minha conta
+    - Login não funciona
+    - Estou bloqueado fora da conta
+    - Esqueci minha senha
+
+- intent: mudar_plano
+  examples: |
+    - Quero mudar meu plano
+    - Como faço upgrade?
+    - Cancelar assinatura
+    - Quero um plano mais barato
+
+- intent: problema_tecnico
+  examples: |
+    - O aplicativo não abre
+    - A música não carrega
+    - Erro de conexão
+    - Áudio travando
+
+- intent: pedir_ajuda_humana
+  examples: |
+    - Quero falar com um atendente
+    - Não resolveu meu problema
+    - Me transfira para um humano
+
+- intent: despedir
+  examples: |
+    - tchau
+    - até logo
+    - adeus
+    - até mais
+
+- intent: afirmar
+  examples: |
+    - sim
+    - correto
+    - quero
+    - pode ser
+
+- intent: desafio_bot
+  examples: |
+    - Você é um robô?
+    - Você é humano?
+    - Tem alguém real aí?
+    - Quero falar com uma pessoa

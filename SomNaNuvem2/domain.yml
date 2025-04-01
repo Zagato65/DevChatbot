@@ -1,0 +1,48 @@
+version: "3.1"
+
+intents:
+  - cumprimentar
+  - agradecer
+  - problema_acesso
+  - mudar_plano
+  - problema_tecnico
+  - pedir_ajuda_humana
+  - despedir
+  - afirmar
+  - desafio_bot
+
+entities:
+  - problema
+
+slots:
+  problema:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: problema
+
+responses:
+  utter_cumprimentar:
+    - text: "Olá! Como posso ajudar você hoje? Por favor, descreva seu problema (ex: acesso, plano, técnico)."
+
+  utter_agradecer:
+    - text: "Fico feliz em ajudar! Se precisar de mais algo, é só chamar."
+
+  utter_nao_sou_humano:
+    - text: "Sou um chatbot de suporte. Posso ajudar com problemas técnicos, planos e acesso à plataforma!" 
+
+  utter_despedir:
+    - text: "Até logo! Espero que seu problema tenha sido resolvido."
+
+  utter_escalonar_humano:
+    - text: "Vou transferir você para um atendente humano. Aguarde um momento!"
+
+  utter_pedir_detalhes:
+    - text: "Poderia detalhar melhor o problema?"
+
+actions:
+  - action_fornecer_suporte
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

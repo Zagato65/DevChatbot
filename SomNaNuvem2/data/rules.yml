@@ -1,0 +1,12 @@
+version: "3.1"
+
+rules:
+- rule: Responder a despedidas
+  steps:
+  - intent: despedir  # Intent definida no seu domain.yml
+  - action: utter_despedir  # Resposta em português
+
+- rule: Confirmar que é um chatbot
+  steps:
+  - intent: desafio_bot  # Nova intent para desafios (você precisará adicioná-la ao domain.yml)
+  - action: utter_nao_sou_humano  # Nova resposta (definida abaixo)
