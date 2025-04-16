@@ -1,0 +1,41 @@
+version: "3.1"
+
+intents:
+  - saudacao # Lista de intenções que o chatbot pode reconhecer
+  - buscar_livro_por_titulo
+  - buscar_livro_por_autor
+  - despedida
+
+entities:
+  - titulo
+  - autor
+
+slots:
+  titulo:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: titulo
+
+  autor: 
+    type: text
+    mappings:
+      - type: from_entity
+        entity: autor
+
+responses:
+  utter_saudacao:
+    - text: "Olá! Como posso te ajudar a encontrar um livro?"
+
+  utter_despedida:
+    - text: "Até logo! Volte sempre para novas descobertas literárias."
+
+  utter_perguntar_titulo:
+    - text: "Qual é o titulo do livro que você procura?"
+
+  utter_perguntar_autor:
+    - text: "Qual o autor que você quer pesquisar?"
+
+actions:
+  - action_buscar_por_titulo
+  - action_buscar_por_autor

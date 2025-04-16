@@ -1,0 +1,26 @@
+version: "3.1" #Versão do schema YAML utilizado pelo rasa para interpretação NLU
+
+nlu: # Bloco principal contendo os exemplos de treinamento para os intents
+- intent: saudacao # intenção que representta uma saudação do usuário
+  examples: | # Exemplos de frases que representam essa intenção
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+
+- intent: buscar_livro_por_titulo # Intenção de buscar livro com base no título
+  examples: | # Exemplos com a entidade "titulo" anotada
+    - quero um livro chamado [Dom Casmurro](titulo) # Busca por titulo especifico
+    - estou procurando o livro [1984](titulo) # Outro exemplo de busca por titulo
+    - tem o livro [O Pequeno Prícipe](titulo) # Pergunta sobre a disponibilidade de um titulo
+
+- intent: buscar_livro_por_autor # Intenção de buscar livros com base no autor
+  examples: |
+    - quero livros do [Machado de Assis](autor) # Solicitação 
+    - me mostre obras escritas por [J. K. Rowling](autor) # Outro exemplo com outro autor conhecido
+
+- intent: despedida # Intenção que representa uma despedida do usuário
+  examples: | # Exemplos de frases que representam essa intenção
+    - tchau # forma 
+    - até mais
+    - valeu
